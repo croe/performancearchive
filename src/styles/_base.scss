@@ -1,0 +1,64 @@
+// Base
+//
+// 各要素のデフォルトのスタイルです。
+//
+// Styleguide base
+
+html {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-base-black;
+  overflow: hidden;
+  font-family: "Futura PT",-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+}
+
+.pagetop {
+  position: relative;
+  a {
+    position: absolute;
+    opacity: 0;
+    transition: all 400ms;
+    transition-delay: 200ms;
+    width: 59px;
+    height: 78px;
+    display: block;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  &.is-show {
+    a {
+      opacity: 1;
+    }
+  }
+}
+
+@include min-screen($breakpoint-sm) {
+  .pagetop {
+    position: static;
+    a {
+      position: fixed;
+      width: 59px;
+      height: 78px;
+      top: auto;
+      bottom: 40px;
+      right: 30px;
+      left: auto;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

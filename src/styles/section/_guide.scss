@@ -1,0 +1,176 @@
+.guide {
+  .facilities {
+    .inner {
+      position: relative;
+      h2 {
+
+      }
+      ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        li {
+          width: 340px;
+          .head {
+            h3 {
+              text-align: center;
+              font-size: 18px;
+              line-height: 24px;
+              letter-spacing: .22em;
+            }
+          }
+          .content {
+            margin: 30px auto 60px;
+            img {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .admission {
+    background: url('/images/bg_border-gray.png');
+    .inner {
+      position: relative;
+      text-align: center;
+      .mail {
+        position: relative;
+        margin: 20px auto 0;
+        display: block;
+        transition-property: background;
+        transition-duration: 500ms;
+        border: none;
+        background: $color-base-white;
+        color: $color-base-black;
+        font-size: 14px;
+        width: 200px;
+        padding: 5px 10px 5px 15px;
+        border-radius: 300px;
+        text-align: center;
+        &:before {
+          position: relative;
+          display: inline-block;
+          margin: 0 10px 0 0;
+          content: '\f105';
+          font-family: FontAwesome;
+        }
+        &:hover {
+          cursor: pointer;
+          background: $color-base-green;
+          color: $color-base-white;
+        }
+      }
+    }
+  }
+  .access {
+    background: url('/images/bg_border-green.png');
+    .inner {
+      position: relative;
+      h2 {
+
+      }
+      p {
+
+      }
+      .bytrain {
+        margin: 30px auto;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include min-screen($breakpoint-sm) {
+  .guide {
+    .facilities {
+      .inner {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 148px;
+          left: 50%;
+          width: 350px;
+          height: 665px;
+          transform: translateX(-50%);
+          background: url("/images/asset06.svg") no-repeat;
+        }
+        h2 {  }
+        ul {
+          li {
+            width: 340px;
+            .head {
+              h3 {
+                font-size: 18px;
+                line-height: 24px;
+                letter-spacing: .22em;
+              }
+            }
+            .content {
+              margin: 30px auto 60px;
+              img {  }
+            }
+          }
+        }
+      }
+    }
+    .admission {
+      .inner {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: -35px;
+          width: 320px;
+          height: 190px;
+          transform: translateY(-50%);
+          background: url("/images/asset08.svg") no-repeat;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: -35px;
+          width: 320px;
+          height: 190px;
+          transform: translateY(-50%);
+          background: url("/images/asset07.svg") no-repeat;
+        }
+        .mail {
+          margin: 20px auto 0;
+          font-size: 16px;
+          width: 300px;
+          padding: 10px 15px 10px 30px;
+          border-radius: 300px;
+          &:before {
+            margin: 0 10px 0 0;
+          }
+          &:hover {  }
+        }
+      }
+    }
+    .access {
+      .inner {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 20px;
+          right: -25px;
+          width: 320px;
+          height: 145px;
+          background: url("/images/asset02.svg") no-repeat;
+        }
+        h2 {  }
+        p {  }
+        .bytrain {
+          margin: 30px auto;
+          img {  }
+        }
+      }
+    }
+  }
+}

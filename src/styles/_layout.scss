@@ -1,0 +1,24 @@
+// Layout
+//
+// モジュールの入れ物となる要素のスタイルです。
+//
+// Styleguide layout
+
+
+.layout {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  .wrap {
+    width: calc(100% - 315px);
+    padding: 30px;
+    box-sizing: border-box;
+  }
+}
+
+@include min-screen($breakpoint-sm) {
+
+}

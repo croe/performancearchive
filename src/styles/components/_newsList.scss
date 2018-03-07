@@ -1,0 +1,122 @@
+.news_list {
+  position: relative;
+  background: $color-base-gray;
+  .inner {
+    position: relative;
+    padding: 20px;
+    .more {
+      position: relative;
+      margin: 20px auto 0;
+      display: block;
+      transition-property: background;
+      transition-duration: 500ms;
+      border: none;
+      background: $color-base-white;
+      color: $color-base-black;
+      font-size: 14px;
+      width: 200px;
+      padding: 5px 10px 5px 15px;
+      border-radius: 300px;
+      text-align: center;
+      &:before {
+        position: relative;
+        display: inline-block;
+        margin: 0 10px 0 0;
+        content: '\f105';
+        font-family: FontAwesome;
+      }
+      &:hover {
+        cursor: pointer;
+        background: $color-base-green;
+        color: $color-base-white;
+      }
+    }
+    table {
+      width: 100%;
+      display: block;
+      tbody {
+        width: 100%;
+        display: block;
+        tr {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin: 10px 0 0;
+          background: $color-base-white;
+          .date {
+            display: block;
+            width: 100px;
+            padding: 10px;
+          }
+          .message {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            a {
+              font-size: 14px;
+              line-height: 21px;
+              letter-spacing: .22em;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              display: block;
+              width: 100%;
+              &:hover {
+                color: $color-base-green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include min-screen($breakpoint-sm){
+  .news_list {
+    .inner {
+      padding: 20px;
+      .more {
+        margin: 20px auto 0;
+        font-size: 16px;
+        width: 300px;
+        padding: 10px 15px 10px 30px;
+        border-radius: 300px;
+        &:before {
+          margin: 0 10px 0 0;
+        }
+      }
+      table {
+        width: 100%;
+        tbody {
+          width: 100%;
+          tr {
+            margin: 10px 0 0;
+            .date {
+              width: 200px;
+              padding: 10px;
+            }
+            .message {
+              width: 100%;
+              padding: 10px;
+              a {
+                font-size: 14px;
+                line-height: 21px;
+                letter-spacing: .22em;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                display: block;
+                width: 770px;
+                &:hover {
+                  color: $color-base-green;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

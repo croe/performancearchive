@@ -1,0 +1,37 @@
+/*!
+ Theme Name:   default
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  performancearchive
+ Author:       Akihiro Kato
+ Author URI:   http://4545.jp
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+*/
+/* Vendor */
+@import "vendor/reset";
+@import "vendor/slick";
+
+@import "variables";
+@import "mixin";
+
+/* Base */
+@import "base";
+@import "layout";
+
+/* Components */
+@import "./components/header";
+@import "./components/footer";
+@import "./components/navigation";
+@import "./components/articleList";
+@import "./components/articleDetail";
+@import "./components/newsList";
+
+/* Sections */
+@import "./section/index";
+@import "./section/about";
+@import "./section/member";
+@import "./section/project";
+@import "./section/guide";
+@import "./section/news-detail";

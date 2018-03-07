@@ -1,0 +1,218 @@
+.about {
+  .concept {
+    .inner {
+      position: relative;
+    }
+    h3 {
+      font-size: 20px;
+      margin: 0 0 20px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: .20em;
+      line-height: 20px;
+    }
+    h4 {
+      font-size: 24px;
+      line-height: 36px;
+      margin: 15px 0;
+    }
+    a.mail {
+      position: relative;
+      margin: 20px auto 0;
+      display: block;
+      transition-property: background;
+      transition-duration: 500ms;
+      border: none;
+      background: $color-base-green;
+      color: $color-base-white;
+      font-size: 14px;
+      width: 200px;
+      padding: 5px 10px 5px 15px;
+      border-radius: 300px;
+      text-align: center;
+      &:before {
+        position: relative;
+        display: inline-block;
+        margin: 0 10px 0 0;
+        content: '\f105';
+        font-family: FontAwesome;
+      }
+      &:hover {
+        cursor: pointer;
+        background: $color-base-white;
+        color: $color-base-green;
+      }
+    }
+  }
+  .system {
+    background: url('/images/bg_border-green.png');
+    .inner {
+      position: relative;
+      text-align: center;
+      .figure {
+        img {
+          display: inline-block;
+          width: 300px;
+          height: 176px;
+        }
+      }
+      p {
+        margin: 25px 0 0;
+      }
+    }
+  }
+  .activity {
+    background: url('/images/bg_border-gray.png');
+    .inner {
+      position: relative;
+      ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        li {
+          width: 100%;
+          background: $color-base-white;
+          padding: 15px 30px;
+          margin: 10px 0 0;
+          box-sizing: border-box;
+          .head {
+            background-size: cover;
+            background-position: center;
+          }
+          .content {
+            h3 {
+              margin: 10px 0;
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: .22em;
+            }
+            p {
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: .22em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include min-screen($breakpoint-sm) {
+  .about {
+    .concept {
+      .inner {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 300px;
+          height: 160px;
+          background: url("/images/asset01.svg") no-repeat;
+        }
+      }
+      h3 {
+        font-size: 20px;
+        margin: 0 0 20px;
+      }
+      p {
+        font-size: 16px;
+        letter-spacing: .22em;
+        line-height: 24px;
+      }
+      h4 {
+        font-size: 34px;
+        line-height: 50px;
+        margin: 30px 0;
+      }
+      a.mail {
+        margin: 20px auto 0;
+        font-size: 16px;
+        width: 300px;
+        padding: 10px 15px 10px 30px;
+        border-radius: 300px;
+        &:before {
+          margin: 0 10px 0 0;
+        }
+        &:hover {  }
+      }
+    }
+    .system {
+      .inner {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 250px;
+          height: 400px;
+          transform: translateY(-50%);
+          background: url("/images/asset10.svg") no-repeat;
+        }
+        .figure {
+          img {
+            display: inline-block;
+            width: 532px;
+            height: 292px;
+          }
+        }
+        p {
+          margin: 25px 0 0;
+        }
+      }
+    }
+    .activity {
+      .inner {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: -20px;
+          width: 250px;
+          height: 356px;
+          transform: translateY(-50%);
+          background: url("/images/asset03.svg") no-repeat;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: -20px;
+          width: 250px;
+          height: 356px;
+          transform: translateY(-50%);
+          background: url("/images/asset04.svg") no-repeat;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0 20px;
+          li {
+            width: calc(100% / 3);
+            padding: 15px 30px;
+            margin: 0 10px;
+            .head {
+            }
+            .content {
+              h3 {
+                margin: 10px 0;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: .22em;
+              }
+              p {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: .22em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+nav {
+  width: 315px;
+  .inner {
+    padding: 60px;
+    box-sizing: border-box;
+    ul {
+      margin: 20px 0 0;
+      li {
+        margin: 20px 0 0;
+        a {
+          display: block;
+          font-size: 17px;
+          font-weight: bold;
+          line-height: 24px;
+          letter-spacing: .16em;
+          &:hover {
+            background: $color-base-yellow;
+          }
+        }
+      }
+    }
+    .menu {
+      li {
+        a {  }
+      }
+    }
+    .menu_tags {
+      margin: 60px 0 0;
+      li {
+        a {  }
+      }
+    }
+  }
+}
+
+@include min-screen($breakpoint-sm) {
+  nav {
+  }
+}

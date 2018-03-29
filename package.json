@@ -33,6 +33,7 @@
     "react": "^15.0.2",
     "react-addons-css-transition-group": "^15.4.1",
     "react-dom": "^15.0.2",
+    "react-modal": "^3.3.2",
     "react-router": "^2.4.0",
     "react-slick": "^0.14.5",
     "react.video": "^1.0.14"

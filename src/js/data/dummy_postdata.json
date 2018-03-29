@@ -1,0 +1,231 @@
+[
+  {
+    "id": 18,
+    "date": "2018-03-27T22:51:36",
+    "date_gmt": "2018-03-27T13:51:36",
+    "guid": {
+      "rendered": "http://www.iamas.ac.jp/performancearchive/wp/?p=18"
+    },
+    "modified": "2018-03-28T16:55:54",
+    "modified_gmt": "2018-03-28T07:55:54",
+    "slug": "%e3%83%a2%e3%83%8e%e3%83%ad%e3%83%bc%e3%82%b0%e3%83%bb%e3%82%aa%e3%83%9a%e3%83%a9%e3%80%8c%e6%96%b0%e3%81%97%e3%81%84%e6%99%82%e4%bb%a3%e3%80%8d",
+    "status": "publish",
+    "type": "post",
+    "link": "http://www.iamas.ac.jp/performancearchive/wp/archives/18",
+    "title": {
+      "rendered": "モノローグ・オペラ「新しい時代」"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [
+      1
+    ],
+    "tags": [
+      9
+    ],
+    "acf": {
+      "title_en": "Monologue Opera \"New era\"",
+      "artist_en": "Masahiro MIWA,Shinjiro MAEDA",
+      "performer_en": "さかいれいしう,ウエヤマトモコ,古舘健,大石桂誉,佐近田展康",
+      "collaborator_en": "",
+      "title_ja": "モノローグ・オペラ「新しい時代」",
+      "video_url": "https://youtu.be/OXXxUnDvwpc",
+      "video_iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OXXxUnDvwpc\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>",
+      "artist_ja": "三輪眞弘,前田真二郎",
+      "perfomer_ja": "さかいれいしう,ウエヤマトモコ,古舘健,大石桂誉,佐近田展康",
+      "collaborator_ja": "",
+      "year_of_production": "2001",
+      "year_of_recording": "2017",
+      "recording_director": "HDⅡ PJ"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts/18"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/comments?post=18"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts/18/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/media?parent=18"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/categories?post=18"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/tags?post=18"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "date": "2018-03-26T11:56:18",
+    "date_gmt": "2018-03-26T02:56:18",
+    "guid": {
+      "rendered": "http://www.iamas.ac.jp/performancearchive/wp/?p=13"
+    },
+    "modified": "2018-03-27T22:49:31",
+    "modified_gmt": "2018-03-27T13:49:31",
+    "slug": "%e3%81%b2%e3%81%a8%e3%82%8a%e3%81%ae%e5%82%8d%e8%a6%b3%e8%80%85%e3%81%a8%ef%bc%96%e4%ba%ba%e3%81%ae%e5%bd%93%e7%95%aa%e3%81%ae%e3%81%9f%e3%82%81%e3%81%ae-%e3%80%8c%e3%81%bf%e3%82%93%e3%81%aa%e3%81%8c",
+    "status": "publish",
+    "type": "post",
+    "link": "http://www.iamas.ac.jp/performancearchive/wp/archives/13",
+    "title": {
+      "rendered": "ひとりの傍観者と６人の当番のための 「みんなが好きな給食のおまんじゅう」"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [
+      1
+    ],
+    "tags": [
+      5,
+      6,
+      7,
+      2,
+      3,
+      4
+    ],
+    "acf": {
+      "title_en": "ひとりの傍観者と６人の当番のための 「みんなが好きな給食のおまんじゅう」",
+      "artist_en": "Masahiro MIWA",
+      "performer_en": "",
+      "collaborator_en": "",
+      "title_ja": "ひとりの傍観者と６人の当番のための 「みんなが好きな給食のおまんじゅう」",
+      "video_url": "https://youtu.be/N4Copjo95Rw",
+      "artist_ja": "三輪眞弘",
+      "perfomer_ja": "事業５選抜メンバー（大阪大学）",
+      "collaborator_ja": "",
+      "year_of_production": "2013",
+      "year_of_recording": "2015",
+      "recording_director": "HDⅡ PJ",
+      "video_iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/N4Copjo95Rw\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts/13"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/comments?post=13"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts/13/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/media?parent=13"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/categories?post=13"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "http://www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/tags?post=13"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

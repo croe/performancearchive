@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import $ from 'jquery';
 
 import data from './data';
+import ArticleList from './components/_articleList';
 
 function attachCustomAttributes(domNode) {
   if (domNode) {
@@ -53,6 +54,13 @@ export default class Index extends Component {
 	render() {
 		return (
 				<div className="wrap index" id="top">
+          <ArticleList
+            title={'MEMBER'}
+            article={this.props.article}
+            tags={this.props.tags}
+            page={this.props.page}
+            onEventCallBack={this.pushMessage}
+          />
 					<div className="pagetop"><a href="#top"><img src="/images/pagetop.png" alt="pagetop"/></a></div>
 				</div>
 		)

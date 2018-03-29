@@ -72,7 +72,7 @@ gulp.task('uglify', () => {
 });
 gulp.task('webserver', () => {
   return gulp.src(PATHS.dist)
-    .pipe(webserver({livereload: true, open: 'http://localhost:8000/'}));
+    .pipe(webserver({livereload: false, open: 'http://localhost:8000/'}));
 });
 gulp.task('build:del', () => {
   return del([PATHS.dist]);

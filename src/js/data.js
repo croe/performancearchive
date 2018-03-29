@@ -9,13 +9,15 @@ const data = {
   },
 	paths: [
 		{
-		  BASE_URI: '//gids.jp/',
-			PAGES_URL: '//gids.jp/wp-json/wp/v2/pages/',
-			POSTS_URL: '//gids.jp/wp-json/wp/v2/posts/',
-      LIMIT_POST_URI: '//gids.jp/wp-json/wp/v2/posts?per_page=10',
-      TAGS_URI: '//gids.jp/wp-json/wp/v2/tags/',
-      MEMBER_URI: '//gids.jp/wp-json/wp/v2/posts?filter[tag]=MEMBER?per_page=10',
-      OPINION_URI: '//gids.jp/wp-json/wp/v2/posts?filter[tag]=OPINION?per_page=10'
+		  BASE_URI: '//www.iamas.ac.jp/performancearchive/',
+			PAGES_URL: '//www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts',
+			POSTS_URL: '//www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts',
+      // LIMIT_POST_URI: '//www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/posts',
+      // TAGS_URI: '//www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/tags/',
+      LIMIT_POST_URI: './data/dummy_postdata.json',
+      TAGS_URI: './data/dummy_tagdata.json',
+      MEMBER_URI: '//www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/?filter[tag]=MEMBER?per_page=10',
+      OPINION_URI: '//www.iamas.ac.jp/performancearchive/wp/wp-json/wp/v2/?filter[tag]=OPINION?per_page=10'
 		}
 	],
   menu: {

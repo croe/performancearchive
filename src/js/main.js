@@ -49,22 +49,6 @@ class App extends Component {
 
     let it = this;
     $.ajaxSetup({cache: true});
-    $.getScript('//connect.facebook.net/en_US/sdk.js', function () {
-      FB.init({
-        appId: '1715470391796749',
-        xfbml      : true,
-        version    : 'v2.9'
-
-      });
-      FB.api(
-        '/GIDS.GIDS.GIDS?access_token=1715470391796749|BefN08Ia1LRVPmt5ktORLaLEx-4',
-        'GET',
-        {"fields": "id,name,feed"},
-        function (response) {
-          it.setState({fbFeed: response});
-        }
-      );
-    });
     $.ajax({
       url: data.paths[0].LIMIT_POST_URI,
       dataType: 'json'
@@ -78,6 +62,7 @@ class App extends Component {
       dataType: 'json'
     }).done(function (data) {
       it.setState({tags: data});
+      console.log(data);
     })
 
     $.ajax({
@@ -154,7 +139,7 @@ class App extends Component {
 				<div>
           <Header />
           <div className="layout">
-            <Navigation />
+            <Navigation tag={this.state.tags} />
             {this.props.children && React.cloneElement(this.props.children, {
               feed: this.state.fbFeed,
               article: this.state.article,

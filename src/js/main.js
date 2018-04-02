@@ -20,9 +20,7 @@ import Guide from './guide';
 import Tags from './tags';
 import Articles from './articles';
 
-const production = false;
-
-const dir = production ? "/performancearchive/" : "/";
+const dir = (data.production) ? "/performancearchive/" : "/";
 
 class App extends Component {
 
@@ -65,19 +63,19 @@ class App extends Component {
       console.log(data);
     })
 
-    $.ajax({
-      url: data.paths[0].MEMBER_URI,
-      dataType: 'json'
-    }).done(function (data) {
-      it.setState({articleMember: data});
-    })
-
-    $.ajax({
-      url: data.paths[0].OPINION_URI,
-      dataType: 'json'
-    }).done(function (data) {
-      it.setState({articleOpinion: data});
-    })
+    // $.ajax({
+    //   url: data.paths[0].MEMBER_URI,
+    //   dataType: 'json'
+    // }).done(function (data) {
+    //   it.setState({articleMember: data});
+    // })
+    //
+    // $.ajax({
+    //   url: data.paths[0].OPINION_URI,
+    //   dataType: 'json'
+    // }).done(function (data) {
+    //   it.setState({articleOpinion: data});
+    // })
 
   }
 

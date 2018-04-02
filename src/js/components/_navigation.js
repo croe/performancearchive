@@ -25,7 +25,8 @@ export default class Navigation extends Component {
     super(props);
     this.state = {
       hovered: false,
-      modalIsOpen: false
+      modalIsOpen: false,
+      selectCategory: ""
     }
   }
 
@@ -45,9 +46,10 @@ export default class Navigation extends Component {
 
   }
 
-  openNavModal(){
+  openNavModal(e, sel){
     this.setState({
-      modalIsOpen: true
+      modalIsOpen: true,
+      selectCategory: sel
     })
   }
 
@@ -58,49 +60,59 @@ export default class Navigation extends Component {
   }
 
   render() {
-    // let navlist = this.props.tag.map((item, i) => {
-    //   return (
-    //     <li key={i}>
-    //       <p>{item.name}</p>
-    //     </li>
-    //   )
-    // })
+    let navlist;
+    if (this.props.tag.length){
+      navlist = this.props.tag.map((item, i) => {
+        let nameObj;
+        if (item.description){
+          nameObj = $.parseJSON(item.description);
+        }
+        let category = item.slug.split('-');
+        if (this.state.selectCategory === category[0]){
+          // let link = '/tags/' + item.slug;
+          let link = '/performancearchive/tags/' + item.slug;
+          return (
+            <li key={i} onClick={this.closeNavModal.bind(this)}>
+              <Link to={link}>
+                {item.name}
+              </Link>
+            </li>
+          )
+        }
+      })
+    }
     return (
       <nav>
-        {
-          console.log(this.props.tag)
-        }
         <div className="inner">
           <ul className="menu">
             <li key={data.menu.news.link}>
-              <Link to={data.menu.news.link}>{data.menu.news.name}</Link>
+              {data.menu.news.name}
             </li>
             <li key={data.menu.aboutus.link}>
-              <Link to={data.menu.aboutus.link}>{data.menu.aboutus.name}</Link>
+              {data.menu.aboutus.name}
             </li>
             <li key={data.menu.contact.link}>
-              <Link to={data.menu.contact.link}>{data.menu.contact.name}</Link>
+              {data.menu.contact.name}
             </li>
           </ul>
           <ul className="menu_tags">
-            <li key={data.menu.artist.link} onClick={this.openNavModal.bind(this)}>
-              {/*<Link to={data.menu.artist.link}>{data.menu.artist.name}</Link>*/}
-              <a>{data.menu.artist.name}</a>
+            <li key={data.menu.artist.link} onClick={e => this.openNavModal(e, 'artist')}>
+              {data.menu.artist.name}
             </li>
-            <li key={data.menu.title.link}>
-              <Link to={data.menu.title.link}>{data.menu.title.name}</Link>
+            <li key={data.menu.title.link} onClick={e => this.openNavModal(e, 'title')}>
+              {data.menu.title.name}
             </li>
-            <li key={data.menu.performer.link}>
-              <Link to={data.menu.performer.link}>{data.menu.performer.name}</Link>
+            <li key={data.menu.performer.link} onClick={e => this.openNavModal(e, 'per_col')}>
+              {data.menu.performer.name}
             </li>
-            <li key={data.menu.production.link}>
-              <Link to={data.menu.production.link}>{data.menu.production.name}</Link>
+            <li key={data.menu.production.link} onClick={e => this.openNavModal(e, 'yop')}>
+              {data.menu.production.name}
             </li>
-            <li key={data.menu.recording.link}>
-              <Link to={data.menu.recording.link}>{data.menu.recording.name}</Link>
+            <li key={data.menu.recording.link} onClick={e => this.openNavModal(e, 'yor')}>
+              {data.menu.recording.name}
             </li>
-            <li key={data.menu.director.link}>
-              <Link to={data.menu.director.link}>{data.menu.director.name}</Link>
+            <li key={data.menu.director.link} onClick={e => this.openNavModal(e, 'record')}>
+              {data.menu.director.name}
             </li>
           </ul>
         </div>
@@ -111,7 +123,7 @@ export default class Navigation extends Component {
         >
           <div className="nav_modal">
             <ul>
-              {/*{navlist}*/}
+              {navlist}
             </ul>
             <button onClick={this.closeNavModal.bind(this)}>Close</button>
           </div>

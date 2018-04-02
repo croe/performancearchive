@@ -20,11 +20,11 @@ export default class Header extends Component {
 				<header className="header">
 					<div className="inner">
 						<h1><Link to="/">IAMAS PERFORMANCE ARCHIVE</Link></h1>
-						<div className="btn_lang">
-							<button className="is-active">Ja</button>
-							<span>/</span>
-							<button>En</button>
-						</div>
+						{/*<div className="btn_lang">*/}
+							{/*<button className="is-active">Ja</button>*/}
+							{/*<span>/</span>*/}
+							{/*<button>En</button>*/}
+						{/*</div>*/}
 						<p className="copy">&copy;2018 IAMAS All Rights Reserved.</p>
 					</div>
 				</header>

@@ -32,7 +32,8 @@ export default class ArticleList extends Component {
 
   componentWillMount() {
 
-    let hash = location.pathname.replace('\/tags\/', '');
+    let prod = (data.production) ? '\/performancearchive\/tags\/' : '\/tags\/'
+    let hash = location.pathname.replace(prod, '');
     if (hash !== '\/') {
       this.setState({
         query: hash
@@ -63,13 +64,17 @@ export default class ArticleList extends Component {
     console.log(this.state.query);
     if (this.props.article.length !== 0) {
       if (this.state.query !== ''){
-        let newHash = location.pathname.replace('\/tags\/','');
+        let prod = (data.production) ? '\/performancearchive\/tags\/' : '\/tags\/'
+        let newHash = location.pathname.replace(prod,'');
         posts = this.props.article.map((item,i) => {
           let flag = false;
-          let link = '/articles/' + item.id;
+          let prod2 = data.production ? '/performancearchive/articles/' : '/articles/'
+          let link = prod2 + item.id;
           let tags = item.tags.map((tg,j) => {
             let m = _.filter(this.props.tags, function(num){ return num.id === tg;})
-            let link = '/tags/' + m[0].slug;
+            console.log(m[0])
+            let prod3 = data.production ? '/performancearchive/tags/' : '/tags/';
+            let link = prod3 + m[0].slug;
             if(_.includes(m[0].slug, newHash)){ flag = true }
             return (
               <li key={j} className="tag"><Link to={link}>{ m[0].name }</Link></li>
@@ -97,14 +102,15 @@ export default class ArticleList extends Component {
               return num.id === tg;
             })
             if(m[0]) {
-              let link = '/tags/' + m[0].slug;
-              // let link = '/performancearchive/tags/' + m[0].slug;
+              let prod = (data.production) ? '\/performancearchive\/tags\/' : '\/tags\/'
+              let link = prod + m[0].slug;
               return (
                 <li key={j} className="tag"><Link to={link}>{ m[0].name }</Link></li>
               )
             }
           });
-          let link = '/articles/' + item.id;
+          let prod2 = data.production ? '/performancearchive/articles/' : '/articles/'
+          let link = prod2 + item.id;
           return (
             <li key={i}>
               <Link to={link}>

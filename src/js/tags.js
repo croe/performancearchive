@@ -29,10 +29,18 @@ export default class Tags extends Component {
   }
 
   render() {
+    let title;
+    if (this.props.tags){
+      title = this.props.tags.map((item, i) => {
+        if (item.slug === this.props.routeParams.tag) {
+          return item.name;
+        }
+      })
+    }
     return (
       <div className="wrap tags">
         <ArticleList
-          title={'# ' + this.props.routeParams.tag}
+          title={title}
           article={this.props.article}
           tags={this.props.tags}
           page={this.props.page}

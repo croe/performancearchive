@@ -55,13 +55,12 @@ export default class Index extends Component {
 		return (
 				<div className="wrap index" id="top">
           <ArticleList
-            title={'MEMBER'}
+            title={''}
             article={this.props.article}
             tags={this.props.tags}
             page={this.props.page}
             onEventCallBack={this.pushMessage}
           />
-					<div className="pagetop"><a href="#top"><img src="/images/pagetop.png" alt="pagetop"/></a></div>
 				</div>
 		)
 	}

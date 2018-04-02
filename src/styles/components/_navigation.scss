@@ -8,14 +8,15 @@ nav {
       li {
         margin: 20px 0 0;
         a {
-          display: block;
-          font-size: 17px;
-          font-weight: bold;
-          line-height: 24px;
-          letter-spacing: .16em;
-          &:hover {
-            background: $color-base-yellow;
-          }
+
+        }
+        display: block;
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 24px;
+        letter-spacing: .16em;
+        &:hover {
+          background: $color-base-yellow;
         }
       }
     }

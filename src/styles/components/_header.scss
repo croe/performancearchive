@@ -1,5 +1,6 @@
 .header {
-  background: $color-base-yellow;
+  margin: 20px 0 0;
+  background: $color-key;
   .inner {
     position: relative;
     width: 100%;
@@ -17,7 +18,7 @@
         font-weight: bold;
         letter-spacing: 0.14em;
         line-height: 1;
-        color: $color-base-black;
+        color: $color-base-white;
       }
     }
     .btn_lang {
@@ -26,24 +27,34 @@
       justify-content: flex-start;
       align-items: center;
       margin: 0 0 0 20px;
+      color: $color-base-white;
       button {
         border: none;
         background: none;
+        font-family: $font-mincho;
         font-size: 24px;
-        font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
         font-weight: bold;
-        &.is-active {
-          color: $color-base-red;
-        }
+        color: $color-base-white;
         &:hover {
           cursor: pointer;
+        }
+      }
+      &.lang_ja {
+        .ja {
+          color: $color-active;
+        }
+      }
+      &.lang_en {
+        .en {
+          color: $color-active;
         }
       }
     }
     .copy {
       position: absolute;
-      bottom: 40px;
+      bottom: 12px;
       right: 40px;
+      color: $color-base-white;
     }
   }
 }

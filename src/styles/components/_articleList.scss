@@ -1,6 +1,12 @@
 .article_list {
   .inner {
     position: relative;
+    h2 {
+      font-size: 20px;
+      font-family: $font-mincho;
+      color: $color-key;
+      padding: 0 0 20px;
+    }
     ul {
       &.disp_thumb {
         display: block;
@@ -12,9 +18,10 @@
           > a {
             display: block;
             .list_inner {
-              box-shadow: 0 1px 1px rgba(0,0,0,.2);
+              //box-shadow: 0 1px 1px rgba(0,0,0,.2);
               iframe {
                 width: 100%;
+                height: 100%;
               }
               .head {
                 position: relative;
@@ -109,93 +116,92 @@
         }
       }
       .tags {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        > li {
-          display: inline-block;
-          margin: 10px 12px 0 0;
-          a {
-            display: inline;
-            font-size: 12px;
-            border: none;
-            color: $color-base-black;
-            padding: 2px 4px;
-            height: 25px;
-            &:hover {
-              cursor: pointer;
-              opacity: .7;
-            }
-            &:before {
-              content: '#';
-              margin: 0 2px 0 0;
+        margin: 5px 0 0;
+        ul {
+          &.tag_title {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+          }
+          &.tag_yop {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+          }
+          &.tag_artist {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            li {
+              a {
+                position: relative;
+                padding: 0 0 0 7px;
+                &:before {
+                  position: absolute;
+                  content: '';
+                  width: 1px;
+                  height: 70%;
+                  top: 50%;
+                  left: 3px;
+                  background: $color-key;
+                  transform: translateY(-50%);
+                }
+              }
+              &:first-child {
+                a {
+                  &:before {
+                    display: none;
+                  }
+                }
+              }
             }
           }
-        }
-      }
-    }
-    .more {
-      position: relative;
-      margin: 40px auto 0;
-      display: block;
-      transition-property: background;
-      transition-duration: 500ms;
-      border: none;
-      background: $color-base-gray;
-      color: $color-base-black;
-      font-size: 14px;
-      width: 200px;
-      padding: 5px 10px 5px 15px;
-      border-radius: 300px;
-      &:before {
-        position: relative;
-        display: inline-block;
-        margin: 0 10px 0 0;
-        content: '\f105';
-        font-family: FontAwesome;
-      }
-      &:hover {
-        cursor: pointer;
-        background: $color-base-green;
-        color: $color-base-white;
-      }
-    }
-    .change {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 0 10px;
-      p {
-        font-size: 14px;
-        line-height: 21px;
-        letter-spacing: .22em;
-      }
-      button {
-        border: none;
-        background: none;
-        &:before {
-          font-size: 20px;
-          transition: color 500ms ease-in-out;
-          color: $color-base-black;
-        }
-        &:hover {
-          cursor: pointer;
-          &:before {
-            color: $color-base-green;
+          &.tag_performer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            li {
+              a {
+                position: relative;
+                padding: 0 0 0 7px;
+                &:before {
+                  position: absolute;
+                  content: '';
+                  width: 1px;
+                  height: 70%;
+                  top: 50%;
+                  left: 3px;
+                  background: $color-key;
+                  transform: translateY(-50%);
+                }
+              }
+              &:first-child {
+                a {
+                  &:before {
+                    display: none;
+                  }
+                }
+              }
+            }
           }
-        }
-      }
-      .thumb {
-        &:before {
-          content: '\f009';
-          font-family: FontAwesome;
-        }
-      }
-      .list {
-        &:before {
-          content: '\f0c9';
-          font-family: FontAwesome;
+          &.tag_record {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+          }
+          li {
+            display: flex;
+            a {
+              font-size: 11px;
+              color: $color-key;
+              text-decoration: none;
+              text-align: right;
+              &:hover {
+                color: $color-active;
+              }
+            }
+          }
         }
       }
     }
@@ -292,59 +298,6 @@
           }
         }
         .tags {
-          > li {
-            margin: 10px 12px 0 0;
-            a {
-              font-size: 12px;
-              padding: 2px 4px;
-              height: 25px;
-              &:hover {  }
-              &:before {
-                margin: 0 2px 0 0;
-              }
-            }
-          }
-        }
-      }
-      .more {
-        margin: 40px auto 0;
-        font-size: 16px;
-        width: 300px;
-        padding: 10px 15px 10px 30px;
-        border-radius: 300px;
-        &:before {
-          margin: 0 10px 0 0;
-          content: '\f105';
-        }
-        &:hover {  }
-      }
-      .change {
-        position: absolute;
-        justify-content: flex-start;
-        top: 70px;
-        right: 15px;
-        p {
-          font-size: 14px;
-          line-height: 21px;
-          letter-spacing: .22em;
-        }
-        button {
-          &:before {
-            font-size: 20px;
-          }
-          &:hover {
-            &:before {  }
-          }
-        }
-        .thumb {
-          &:before {
-            content: '\f009';
-          }
-        }
-        .list {
-          &:before {
-            content: '\f0c9';
-          }
         }
       }
     }

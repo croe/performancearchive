@@ -59,6 +59,7 @@ export default class Index extends Component {
             article={this.props.article}
             tags={this.props.tags}
             page={this.props.page}
+            langEn={this.props.langEn}
             onEventCallBack={this.pushMessage}
           />
 				</div>

@@ -5,17 +5,33 @@
 import React, {Component} from "react";
 import {browserHistory, Router, Route, IndexRoute, Link} from 'react-router';
 import $ from 'jquery';
+import _ from 'lodash';
 import Modal from 'react-modal';
 
 import data from '../data';
 
 const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    overflowX             : 'hidden'
+  overlay: {
+    width: 'calc(100% - 315px)',
+    position: 'absolute',
+    background: 'transparent',
+    right: 0,
+    left: 'auto',
+    top: '136px'
+  },
+  content: {
+    position: 'absolute',
+    width: '100%',
+    right: 0,
+    left: 'auto',
+    background: 'rgb(255, 255, 255)',
+    overflowX: 'hidden',
+    overflowY: 'auto',
+    outline: 'none',
+    padding: 0,
+    height: 'calc(100% - 136px)',
+    top: 0,
+    border: 'none'
   }
 };
 
@@ -26,15 +42,16 @@ export default class Navigation extends Component {
     this.state = {
       hovered: false,
       modalIsOpen: false,
-      selectCategory: ""
+      selectCategory: "",
+      prevIndexAlphabet: ''
     }
   }
 
   componentDidMount() {
 
     if ($(window).width() < 769) {
-      $('nav').on('click', function(){
-        if($(this).hasClass('is-active')){
+      $('nav').on('click', function () {
+        if ($(this).hasClass('is-active')) {
           $(this).removeClass('is-active');
         } else {
           $(this).addClass('is-active');
@@ -42,18 +59,18 @@ export default class Navigation extends Component {
       });
     }
 
-    console.log(this.props.tag)
+    $("nav .inner").css({height: $(window).innerHeight() - $("header").innerHeight()})
 
   }
 
-  openNavModal(e, sel){
+  openNavModal(e, sel) {
     this.setState({
       modalIsOpen: true,
       selectCategory: sel
     })
   }
 
-  closeNavModal(){
+  closeNavModal() {
     this.setState({
       modalIsOpen: false
     })
@@ -61,23 +78,53 @@ export default class Navigation extends Component {
 
   render() {
     let navlist;
-    if (this.props.tag.length){
-      navlist = this.props.tag.map((item, i) => {
-        let nameObj;
-        if (item.description){
-          nameObj = $.parseJSON(item.description);
-        }
-        let category = item.slug.split('-');
-        if (this.state.selectCategory === category[0]){
-          // let link = '/tags/' + item.slug;
-          let link = '/performancearchive/tags/' + item.slug;
-          return (
-            <li key={i} onClick={this.closeNavModal.bind(this)}>
-              <Link to={link}>
-                {item.name}
-              </Link>
-            </li>
-          )
+    let tagArr;
+    let title;
+    if (this.props.tag.length) {
+      let it = this;
+      tagArr = _.sortBy(this.props.tag, [function (o) {
+        // return it.props.langEn ? $.parseJSON(o.description).name_en : $.parseJSON(o.description).name_ja;
+        return $.parseJSON(o.description).name_en;
+      }]);
+      navlist = tagArr.map((item, i) => {
+        let obj;
+        if (item.description) {
+          obj = $.parseJSON(item.description);
+          let category = obj.category;
+          if (this.state.selectCategory === category) {
+            let prod = data.production ? '/performancearchive/tags/' : '/tags/';
+            let link = prod + item.slug;
+            let name = this.props.langEn ? obj.name_en : obj.name_ja;
+            if (this.state.selectCategory === "artist"){ title = "Artist"}
+            if (this.state.selectCategory === "title"){ title = "Title"}
+            if (this.state.selectCategory === "performer"){ title = "Performer/Collaborator"}
+            if (this.state.selectCategory === "yop"){ title = "Year of Production"}
+            if (this.state.selectCategory === "yor"){ title = "Year of Recording"}
+            if (this.state.selectCategory === "record"){ title = "Recording Director"}
+            if (this.state.selectCategory === "artist" ||
+              this.state.selectCategory === "title" ||
+              this.state.selectCategory === "performer" ||
+              this.state.selectCategory === "record") {
+              let index = obj.name_en.toUpperCase().slice(0, 1);
+              let firstClass = (this.state.prevIndexAlphabet !== index) ? 'index' : '';
+              this.state.prevIndexAlphabet = index;
+              return (
+                <li key={i} className={firstClass} onClick={this.closeNavModal.bind(this)}>
+                  <Link to={link} data-index={index}>
+                    {name}
+                  </Link>
+                </li>
+              )
+            } else {
+              return (
+                <li key={i} onClick={this.closeNavModal.bind(this)}>
+                  <Link to={link}>
+                    {name}
+                  </Link>
+                </li>
+              )
+            }
+          }
         }
       })
     }
@@ -85,14 +132,14 @@ export default class Navigation extends Component {
       <nav>
         <div className="inner">
           <ul className="menu">
-            <li key={data.menu.news.link}>
-              {data.menu.news.name}
+            <li>
+              <Link to={data.menu.news.link}>{data.menu.news.name}</Link>
             </li>
-            <li key={data.menu.aboutus.link}>
-              {data.menu.aboutus.name}
+            <li>
+              <Link to={data.menu.aboutus.link}>{data.menu.aboutus.name}</Link>
             </li>
-            <li key={data.menu.contact.link}>
-              {data.menu.contact.name}
+            <li>
+              <Link to={data.menu.contact.link}>{data.menu.contact.name}</Link>
             </li>
           </ul>
           <ul className="menu_tags">
@@ -102,7 +149,7 @@ export default class Navigation extends Component {
             <li key={data.menu.title.link} onClick={e => this.openNavModal(e, 'title')}>
               {data.menu.title.name}
             </li>
-            <li key={data.menu.performer.link} onClick={e => this.openNavModal(e, 'per_col')}>
+            <li key={data.menu.performer.link} onClick={e => this.openNavModal(e, 'performer')}>
               {data.menu.performer.name}
             </li>
             <li key={data.menu.production.link} onClick={e => this.openNavModal(e, 'yop')}>
@@ -122,6 +169,7 @@ export default class Navigation extends Component {
           style={customStyles}
         >
           <div className="nav_modal">
+            <h2>{title}</h2>
             <ul>
               {navlist}
             </ul>

@@ -1,22 +1,33 @@
 nav {
   width: 315px;
+  position: relative;
+  &:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: $color-key;
+    position: absolute;
+    top: 30px;
+    right: 0;
+  }
   .inner {
-    padding: 60px;
+    padding: 50px;
     box-sizing: border-box;
     ul {
       margin: 20px 0 0;
       li {
         margin: 20px 0 0;
+        display: block;
+        font-size: 17px;
+        font-weight: normal;
+        line-height: 24px;
+        letter-spacing: .16em;
+        color: $color-key;
         a {
 
         }
-        display: block;
-        font-size: 17px;
-        font-weight: bold;
-        line-height: 24px;
-        letter-spacing: .16em;
         &:hover {
-          background: $color-base-yellow;
+          color: $color-active;
         }
       }
     }
@@ -28,7 +39,45 @@ nav {
     .menu_tags {
       margin: 60px 0 0;
       li {
-        a {  }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.nav_modal {
+  padding: 50px 30px;
+  h2 {
+    font-size: 30px;
+    line-height: 52.5px;
+    color: $color-key;
+    padding: 0 0 30px;
+  }
+  ul {
+    li {
+      position: relative;
+      padding: 0 0 0 50px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      a {
+        font-size: 12px;
+        line-height: 21px;
+      }
+      &.index {
+        a {
+          &:before {
+            position: absolute;
+            content: attr(data-index);
+            font-size: 30px;
+            font-weight: bold;
+            color: $color-key;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+          }
+        }
       }
     }
   }
@@ -36,5 +85,79 @@ nav {
 
 @include min-screen($breakpoint-sm) {
   nav {
+    width: 315px;
+    position: relative;
+    &:after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      background: $color-key;
+      position: absolute;
+      top: 30px;
+      right: 0;
+    }
+    .inner {
+      padding: 50px;
+      box-sizing: border-box;
+      ul {
+        margin: 20px 0 0;
+        li {
+          margin: 20px 0 0;
+          display: block;
+          font-size: 17px;
+          font-weight: normal;
+          line-height: 24px;
+          letter-spacing: .16em;
+          color: $color-key;
+          a {
+
+          }
+          &:hover {
+            color: $color-active;
+          }
+        }
+      }
+      .menu {
+        li {
+          a {  }
+        }
+      }
+      .menu_tags {
+        margin: 60px 0 0;
+        li {
+          a {  }
+        }
+      }
+    }
+  }
+  .nav_modal {
+    ul {
+      li {
+        margin: 15px 0 0;
+        position: relative;
+        padding: 0 0 0 50px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        a {
+          font-size: 12px;
+          line-height: 21px;
+        }
+        &.index {
+          a {
+            &:before {
+              position: absolute;
+              content: attr(data-index);
+              font-size: 30px;
+              font-weight: bold;
+              color: $color-key;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
   }
 }

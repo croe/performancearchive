@@ -3,7 +3,7 @@
  */
 
 const data = {
-  production: false,
+  production: true,
   val: {
     per_page: 20,
     page: 1
@@ -24,15 +24,15 @@ const data = {
   menu: {
     news: {
       name: 'News',
-      link: '/performancearchive/news'
+      link: '/performancearchive/about/?id=news'
     },
     aboutus: {
       name: 'About Us',
-      link: '/performancearchive/aboutus'
+      link: '/performancearchive/about/?id=us'
     },
     contact: {
       name: 'Contact',
-      link: '/performancearchive/contact'
+      link: '/performancearchive/about/?id=contact'
     },
     artist: {
       name: 'Artist',

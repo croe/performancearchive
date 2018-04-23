@@ -33,7 +33,8 @@ export default class Tags extends Component {
     if (this.props.tags){
       title = this.props.tags.map((item, i) => {
         if (item.slug === this.props.routeParams.tag) {
-          return item.name;
+          let obj = $.parseJSON(item.description);
+          return this.props.langEn ? obj.name_en : obj.name_ja;
         }
       })
     }
@@ -44,6 +45,7 @@ export default class Tags extends Component {
           article={this.props.article}
           tags={this.props.tags}
           page={this.props.page}
+          langEn={this.props.langEn}
           onEventCallBack={this.pushMessage}
         />
       </div>

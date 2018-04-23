@@ -1,7 +1,9 @@
 .article_detail {
   .inner {
     > h2 {
-      padding: 50px 0 15px;
+      padding: 10px 0 30px;
+      font-size: 20px;
+      line-height: 35px;
       span {
         position: absolute;
         top: 0;
@@ -22,25 +24,87 @@
         display: block;
         margin: 0 auto;
       }
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
     }
-    .content {
-      h1 {
-        font-size: 30px;
-        padding: 60px 0 20px;
-      }
-      h2 {
-        font-size: 30px;
-        padding: 10px 0;
-        text-align: left;
-      }
-      h3 {
-        font-size: 20px;
-        padding: 10px 0;
-      }
-      p {
-        font-size: 16px;
-        line-height: 30px;
-        letter-spacing: .18em;
+    .infomations {
+      display: flex;
+      flex-direction: row;
+      > div {
+        width: 50%;
+        > div {
+          margin: 20px 0 0;
+          &:first-child {
+            margin: 0;
+          }
+        }
+        h3 {
+          font-size: 12px;
+          line-height: 21px;
+          color: $color-key;
+        }
+        p {
+          font-size: 10px;
+          line-height: 15px;
+          color: $color-key;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          li {
+            font-size: 10px;
+            line-height: 15px;
+            color: $color-key;
+            &:after {
+              content: ',';
+              display: inline;
+              font-size: 10px;
+              line-height: 15px;
+              color: $color-key;
+            }
+            &:last-child {
+              &:after {
+                display: none;
+              }
+            }
+          }
+        }
+        .tag_title {
+
+        }
+        .tag_artist {
+
+        }
+        .tag_performer {
+          ul {
+            flex-direction: column;
+          }
+
+        }
+        .tag_yor {
+
+        }
+        .tag_yop {
+
+        }
+        .info_venue {
+
+        }
+        .info_duration {
+
+        }
+        .info_more {
+          a {
+            font-size: 10px;
+            line-height: 15px;
+            color: $color-active;
+            &:hover {
+              opacity: .7;
+            }
+          }
+        }
       }
     }
   }
